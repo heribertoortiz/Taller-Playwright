@@ -1,0 +1,22 @@
+{
+  "name": "taller-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heribertoortiz/Taller-Playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heribertoortiz/Taller-Playwright/issues"
+  },
+  "homepage": "https://github.com/heribertoortiz/Taller-Playwright#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2"
+  }
+}
