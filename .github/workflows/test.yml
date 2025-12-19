@@ -77,7 +77,7 @@ jobs:
           npx playwright install chromium
           npx playwright test --reporter=html
 
-      - name: Guardar reportes como artefactos
+      - name: Guardar reportes como artefactos de prueba
         if: always()
         uses: actions/upload-artifact@v4
         with:
