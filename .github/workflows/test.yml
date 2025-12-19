@@ -100,7 +100,7 @@ jobs:
           rm -rf ./*
 
           # Copiar nuevo contenido del reporte
-          mkdir -r report-${GITHUB_RUN_NUMBER}
+          mkdir -p report-${GITHUB_RUN_NUMBER}
           cp -r $GITHUB_WORKSPACE/playwright-report/* ./report-${GITHUB_RUN_NUMBER}
 
 
