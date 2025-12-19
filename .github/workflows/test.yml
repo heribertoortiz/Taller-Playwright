@@ -74,7 +74,7 @@ jobs:
       - name: Instalar y correr tests (proyectos setup + chromium)
         run: |
           npm install
-          npx playwright install --with-deps
+          npx playwright install chromium
           npx playwright test --reporter=html
 
       - name: Guardar reportes como artifacts
@@ -97,10 +97,10 @@ jobs:
           cd gh-pages
 
           # Limpiar contenido viejo
-          rm -rf ./*
+          rm -rg ./*
 
           # Copiar nuevo contenido del reporte
-          mkdir -p report-${GITHUB_RUN_NUMBER}
+          mkdir -r report-${GITHUB_RUN_NUMBER}
           cp -r $GITHUB_WORKSPACE/playwright-report/* ./report-${GITHUB_RUN_NUMBER}
 
 
