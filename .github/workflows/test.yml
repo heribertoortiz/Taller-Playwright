@@ -67,5 +67,5 @@ jobs:
             VITE_API_URL: ${{ env.VITE_API_URL }}
 
         # Esperar a que se levante el frontend
-      - name: Esperar frontend
+      - name: Esperar frontend comunicacion
         run: wait-on http://localhost:3000
