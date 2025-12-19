@@ -97,7 +97,7 @@ jobs:
           cd gh-pages
 
           # Limpiar contenido viejo
-          rm -rg ./*
+          rm -rf ./*
 
           # Copiar nuevo contenido del reporte
           mkdir -r report-${GITHUB_RUN_NUMBER}
