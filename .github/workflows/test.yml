@@ -49,23 +49,24 @@ jobs:
           MONGO_URI: ${{ env.MONGO_URI }}
           JWT_SECRET: ${{ env.JWT_SECRET }}
           PORT: ${{ env.PORT }}
-        
-        # Se instala la herramienta wait-on globalmente
+
       - name: Instalar wait-on
         run: npm install -g wait-on
-        
-        # Esperar que el backend se levanta en el puerto 6007
+
       - name: Esperar backend
         run: wait-on tcp:6007
-        
-        # Instalar dependencias del frontend
+
       - name: Instalar dependencias frontend
         run: |
           cd app/frontend
           npm install
-        env:
-            VITE_API_URL: ${{ env.VITE_API_URL }}
 
-        # Esperar a que se levante el frontend
-      - name: Esperar frontend comunicacion
+      - name: Levantar frontend
+        run: |
+          cd app/frontend
+          npm run dev > frontend.log 2>&1 &
+        env:
+          VITE_API_BASE: ${{ env.VITE_API_BASE }}
+
+      - name: Esperar frontend
         run: wait-on http://localhost:3000
