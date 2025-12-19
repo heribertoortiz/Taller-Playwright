@@ -84,7 +84,7 @@ jobs:
           name: playwright-report
           path: ./playwright-report
 
-      - name: Deploy Playwright report to GitHub Pages
+      - name: Deploy Playwright report to GitHub Page
         if: always()
         run: |
           git config --global user.name "github-actions[bot]"
