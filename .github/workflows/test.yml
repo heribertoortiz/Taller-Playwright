@@ -75,6 +75,7 @@ jobs:
         run: |
           npm install
           npx playwright install
+          npx playwright test install --with-deps
           npx playwright test --reporter=html
 
       - name: Guardar reportes como artifacts
