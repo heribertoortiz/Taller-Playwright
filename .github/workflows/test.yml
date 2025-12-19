@@ -74,7 +74,7 @@ jobs:
       - name: Instalar y correr tests (proyectos setup + chromium)
         run: |
           npm install
-          npx playwright install chromium
+          npx playwright install
           npx playwright test --reporter=html
 
       - name: Guardar reportes como artefactos de prueba
