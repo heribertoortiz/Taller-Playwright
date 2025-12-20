@@ -70,11 +70,14 @@ jobs:
 
       - name: Esperar frontend
         run: wait-on http://localhost:3000
+      
+      - name: Crear carpeta auth
+        run: mkdir -p playwright/.auth
 
       - name: Instalar y correr tests (proyectos setup + chromium)
         run: |
           npm install
-          npx playwright install
+          npx playwright install --with-deps chromium
           npx playwright test --reporter=html
 
       - name: Guardar reportes como artefactos de prueba
