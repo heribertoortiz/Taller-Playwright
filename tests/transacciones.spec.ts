@@ -8,9 +8,7 @@ import { request } from 'http';
 let dashboardPage: DashboardPage;
 let modalEnviarTransferencia: ModalEnviarTransferencia;
 
-const testUsuarioEnvia = test.extend({
-    storageState: require.resolve('../playwright/.auth/usuarioEnvia.json')
-});
+const testUsuarioEnvia = test;
 
 const testUsuarioRecibe = test.extend({
     storageState: require.resolve('../playwright/.auth/usuarioRecibe.json')

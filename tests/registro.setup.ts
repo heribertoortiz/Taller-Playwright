@@ -39,8 +39,9 @@ setup('Generar usuario que envia dinero', async ({ page, request }) => { //Se cr
     await page.context().storageState( { path:usuarioEnviaAuthFile }); //Guarda el usuario que envia en el archivo usuarioEnvia.json
 });
 
-setup('Loguear usuario que recibe dinero', async ({ page, request }) => { //Validar inicio de sesion con usuario que recibe dinero
-    await loginPage.completarYHacerClickBotonLogin(TestData.usuarioValido);
+setup('Crear usuario, Loguear usuario que recibe dinero', async ({ page, request }) => { //Validar inicio de sesion con usuario que recibe dinero
+    const nuevoUsuario = await BackendUtils.crearUsuarioPorAPI(request, TestData.usuarioValido, false);
+    await loginPage.completarYHacerClickBotonLogin(nuevoUsuario);
     await expect(dashboardPage.dashboardTitle).toBeVisible();
     await page.context().storageState( { path: usuarioRecibeAuthFile } ); //Guarda el usuario que recibe en el archivo usuarioEnvia.json
 
